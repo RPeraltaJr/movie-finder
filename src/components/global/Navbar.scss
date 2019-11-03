@@ -1,0 +1,23 @@
+.navbar {
+    a {
+        text-decoration: none;
+    }
+    &-nav {
+        flex-direction: row;
+    }
+    .nav-item {
+        @media (max-width: 991px) {
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+        a {
+            color: #aaa;
+            &:hover,
+            &:target,
+            &:active {
+                color: white;
+            }
+        }
+    }
+}
