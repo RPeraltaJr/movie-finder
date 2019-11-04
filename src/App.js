@@ -9,7 +9,7 @@ import './App.scss';
 
 function App() {
 
-  const [ movie, setMovie ] = useState([]);
+  const [ movie, setMovie ] = useState({});
   const [ loading, setLoading ] = useState(false);
 
   const searchMovie = async (searchTitle, searchYear) => {
@@ -18,6 +18,7 @@ function App() {
       const res = await axios.get(`https://omdbapi.com/?t=${searchTitle}&y=${searchYear}&apikey=${process.env.REACT_APP_OMDB_API_KEY}`);
       setMovie(res.data);
       setLoading(false);
+      console.log(res.data);
     } 
   }
 

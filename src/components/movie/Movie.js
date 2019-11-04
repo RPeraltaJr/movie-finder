@@ -1,5 +1,6 @@
 import React from 'react'
 import Spinner from './../global/Spinner'
+import PropTypes from 'prop-types';
 import './Movie.scss'
 
 export default function Movie({ movie, loading }) {
@@ -46,4 +47,9 @@ export default function Movie({ movie, loading }) {
         )
     }
 
+}
+
+Movie.propTypes = {
+    movie: PropTypes.object.isRequired,
+    loading: PropTypes.bool.isRequired,
 }

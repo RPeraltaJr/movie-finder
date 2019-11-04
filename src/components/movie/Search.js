@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Alert from './../global/Alert'
+import PropTypes from 'prop-types';
 import './Search.scss'
 
 export default function Search({ searchMovie, setMovie, showClear }) {
@@ -25,7 +26,7 @@ export default function Search({ searchMovie, setMovie, showClear }) {
         }
     }
 
-    const clearMovie = () => setMovie([]);
+    const clearMovie = () => setMovie({});
 
     const onChangeTitle = (e) => {
         setSearchTitle( e.target.value ); 
@@ -63,4 +64,10 @@ export default function Search({ searchMovie, setMovie, showClear }) {
             </div>
         </section>
     )
+}
+
+Search.propTypes = {
+    searchMovie: PropTypes.func.isRequired,
+    setMovie: PropTypes.func.isRequired,
+    showClear: PropTypes.bool.isRequired,
 }
