@@ -3,10 +3,8 @@ import React from 'react'
 export default function Alert({ alert }) {
     return (
         alert !== null && (
-            <div className="container mt-3">
-                <div className="alert alert-danger" role="alert">
-                    <span className={alert.icon}></span> {alert.msg}
-                </div>
+            <div className={`alert alert-${alert.type}`} role="alert">
+                <span className="fas fa-info-circle mr-1"></span> {alert.msg}
             </div>)
     )
 }
