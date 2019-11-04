@@ -33,7 +33,7 @@ export default function Movie({ movie, loading }) {
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                {/* { Poster != 'N/A' && (<img src={Poster} alt={`${Title} poster`} className="img-fluid mb-3" />) } */}
+                                { Poster != 'N/A' && (<img src={Poster} alt={`${Title} poster`} className="img-fluid mb-3" />) }
                                 <h2 className="font-weight-light">{ Title }</h2>
                                 <StarRatings
                                     rating={imdbRating/2}
@@ -48,6 +48,11 @@ export default function Movie({ movie, loading }) {
                                     { Year } &bull; { Genre } &bull; { Runtime }
                                 </h5>
                                 { Plot != 'N/A' && (<p>{ Plot }</p>) }
+                                <hr />
+                                { Actors && (<p><strong>Cast:</strong> {Actors}</p>)}
+                                { Director && (<p><strong>Director(s):</strong> {Director}</p>)}
+                                { Writer && (<p><strong>Writer(s):</strong> {Writer}</p>)}
+                                { BoxOffice && (<p><small>Box Office: {BoxOffice}</small></p>)}
                             </div>
                         </div>
                     </div>
