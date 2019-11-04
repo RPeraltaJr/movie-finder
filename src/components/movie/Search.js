@@ -48,7 +48,7 @@ export default function Search({ searchMovie, setMovie, showClear }) {
                 <div className="row">
                     <div className="col-12 col-lg-8">
                         <Alert alert={alert} />
-                        <h3 className="font-weight-light text-dark">Search a Movie</h3>
+                        <h5 className="text-dark font-weight-bold">SEARCH A MOVIE</h5>
                         <form className="form" autoComplete="false" onSubmit={onSubmit}>  
                             <div className="form-row">
                                 <div className="col-5">
