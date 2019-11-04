@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Alert from './../global/Alert'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+
+import bgImage from './background.png'
 import './Search.scss'
 
 export default function Search({ searchMovie, setMovie, showClear }) {
@@ -36,13 +38,17 @@ export default function Search({ searchMovie, setMovie, showClear }) {
         setSearchYear( e.target.value ); 
     }
 
+    const searchStyles = {
+        backgroundImage: `url(${bgImage})`
+    }
+ 
     return (
-        <section className="search">
+        <section className="search" style={searchStyles}>
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-lg-8">
                         <Alert alert={alert} />
-                        <h2 className="font-weight-light">Search a Movie</h2>
+                        <h2 className="font-weight-light text-dark">Search a Movie</h2>
                         <form className="form" autoComplete="false" onSubmit={onSubmit}>  
                             <div className="form-row">
                                 <div className="col-5">
@@ -54,7 +60,7 @@ export default function Search({ searchMovie, setMovie, showClear }) {
                                     <input type="search" name="searchYear" id="searchYear" className="form-control" placeholder="Year" value={searchYear} onChange={onChangeYear} maxLength="4" />
                                 </div>
                                 <div className="col-5">
-                                    <button type="submit" className="btn btn-dark mr-2">Submit</button>
+                                    <button type="submit" className="btn btn-primary mr-2">Submit</button>
                                     { showClear && <button className="btn btn-link text-dark" onClick={clearMovie}>Clear</button>}
                                 </div>
                             </div>  

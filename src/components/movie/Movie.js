@@ -1,6 +1,7 @@
 import React from 'react'
 import Spinner from './../global/Spinner'
-import PropTypes from 'prop-types';
+import StarRatings from 'react-star-ratings'
+import PropTypes from 'prop-types'
 import './Movie.scss'
 
 export default function Movie({ movie, loading }) {
@@ -32,9 +33,17 @@ export default function Movie({ movie, loading }) {
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                { Poster != 'N/A' && (<img src={Poster} alt={`${Title} poster`} className="img-fluid mb-3" />) }
+                                {/* { Poster != 'N/A' && (<img src={Poster} alt={`${Title} poster`} className="img-fluid mb-3" />) } */}
                                 <h2 className="font-weight-light">{ Title }</h2>
-                                <h5 className="font-weight-light">
+                                <StarRatings
+                                    rating={imdbRating/2}
+                                    starRatedColor="#FFC108"
+                                    numberOfStars={5}
+                                    starDimension="25px"
+                                    starSpacing="3px"
+                                    name='rating'
+                                    />
+                                <h5 className="font-weight-light mt-2">
                                     <span className="badge badge-secondary mr-2">{ Rated }</span>
                                     { Year } &bull; { Genre } &bull; { Runtime }
                                 </h5>
